@@ -5,5 +5,10 @@ class SessionsController < ApplicationController
   end
 
 
+  def login 
+  end 
+
+  
+
 
 end
