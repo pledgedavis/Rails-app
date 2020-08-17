@@ -1,1 +1,9 @@
 <h1> Login </h1>
+
+<%= form_with model: @user do |u| %>
+       <%= u.label :user_name %>  <%= u.text_field :user_name %>
+         <%= u.label :password %>  <%= u.text_field :password %>
+           <%= u.label :email %>  <%= u.text_field :email %>
+
+         <%=u.submit "submit" %>
+<% end %>
