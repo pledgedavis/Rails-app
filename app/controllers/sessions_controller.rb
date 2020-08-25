@@ -11,9 +11,7 @@ class SessionsController < ApplicationController
   def create 
     # byebug
   end 
-
+   #logout action 
   def destroy 
   end 
-
-
 end
