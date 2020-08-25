@@ -2,6 +2,8 @@ class SessionsController < ApplicationController
 
   def new 
     render :login
+    @user = User.new
+    
   end 
 
   def home 
@@ -13,5 +15,7 @@ class SessionsController < ApplicationController
   end 
    #logout action 
   def destroy 
+    session.clear
+    redirect_to '/'
   end 
 end

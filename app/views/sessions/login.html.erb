@@ -3,7 +3,6 @@
 <%= form_with model: @user do |u| %>
        <%= u.label :user_name %>  <%= u.text_field :user_name %>
          <%= u.label :password %>  <%= u.password_field :password %>
-           <%= u.label :email %>  <%= u.email_field :email %>
 
          <%=u.submit "submit" %>
 <% end %>
