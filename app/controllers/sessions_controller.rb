@@ -1,9 +1,11 @@
+# require 'pry'
 class SessionsController < ApplicationController
 
   def new 
-    render :login
+    # render :login
+    # byebug
     @user = User.new
-    
+    # render :new
   end 
 
   def home 
@@ -11,6 +13,7 @@ class SessionsController < ApplicationController
   end
 
   def create 
+      byebug
     # byebug
   end 
    #logout action 

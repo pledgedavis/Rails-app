@@ -1,9 +1,9 @@
-!--<h1> Login </h1>
+<h1> Login </h1>
 
-<%= form_for(@user) do |u| %>
+<%= form_for @user, url: "/login" do |u| %>
+   
        <%= u.label :username %>  <%= u.text_field :username %>
          <%= u.label :password %>  <%= u.password_field :password %>
 
          <%=u.submit "submit" %>
-<% end %> -->
-
+<% end %>
