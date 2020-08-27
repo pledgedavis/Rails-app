@@ -1,9 +1,9 @@
 !--<h1> Login </h1>
 
-<%= form_for(@user) do |u| %>
-       <%= u.label :username %>  <%= u.text_field :username %>
-         <%= u.label :password %>  <%= u.password_field :password %>
+<%= form_for(@user) do |f| %>
+       <%= f.label :username %>  <%= f.text_field :username %>
+         <%= f.label :password %>  <%= f.password_field :password %>
 
-         <%=u.submit "submit" %>
+         <%=f.submit "submit" %>
 <% end %> -->
 
