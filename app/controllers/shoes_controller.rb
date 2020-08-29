@@ -1,13 +1,13 @@
 class ShoesController < ApplicationController
 
-    def index     
+  def index     
         
     #     byebug
     #    @user = current_user
-    end
+  end
 
 
-    def new 
-
-    end 
+  def new 
+   @shoes = Shoe.new
+  end 
 end
