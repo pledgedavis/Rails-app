@@ -8,6 +8,6 @@ class ShoesController < ApplicationController
 
 
   def new 
-   @shoes = Shoe.new
+   @shoe = Shoe.new
   end 
 end

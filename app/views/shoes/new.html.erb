@@ -1,10 +1,16 @@
-</h1>Create a Shoe below </h1>
 
-<%= form_for(@shoe) do |u| %>
-       <%= u.label :user_name %>  <%= u.text_field :username %>
-        <%= u.label :password %>  <%= u.password_field :password %>
-           <%= u.label :email %>  <%= u.email_field :email %>
+<h1>Create a Shoe below </h1>
 
-         <%=u.submit "submit" %>
+<%= form_for(@shoe) do |f| %>
+   
+       <%= f.label :name  %>  <%= f.text_field :name  %>
+       <br><br>
+         <%= f.label :resale_price %>  <%= f.number_field  :resale_price, min:0%>
+          <br><br>
+          <%= f.label :retail_price  %>  <%= f.number_field :retail_price, min:0 %>
+           <br><br>
+         <%= f.label :quality %>  <%= f.number_field  :quality, min:0, max:10%>
+         <%=f.submit "submit" %>
+<% end %> 
 
-         <%end%>
+
