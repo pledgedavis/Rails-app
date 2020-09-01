@@ -21,8 +21,17 @@ class ShoesController < ApplicationController
   end 
 end
 
+def show 
+   @last_created_shoe = Shoe.last
+end 
+
+
+
 
 private 
-
+def shoe_params
+    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality)
+ end
+  
 
 end
