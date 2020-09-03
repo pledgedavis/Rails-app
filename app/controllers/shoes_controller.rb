@@ -26,11 +26,9 @@ def show
     last_created_shoe
 end 
 
-
-
-
 private
 def last_created_shoe
+    #finds shoe by id and redirects to shoes path if that shoe is false
  @shoe = Shoe.find_by(id: params[:id])
  if !@shoe
   redirect_to shoes_path

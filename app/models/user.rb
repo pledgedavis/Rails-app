@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     has_secure_password
-    has_many :brands
+    # has_many :brands
     has_many :shoes
     has_many :brands, through: :shoes 
 

@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2020_07_11_194744) do
 
   create_table "brands", force: :cascade do |t|
     t.string "company_name"
-    t.integer "user_id"
   end
 
   create_table "shoes", force: :cascade do |t|
