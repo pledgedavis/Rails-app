@@ -23,16 +23,22 @@ class ShoesController < ApplicationController
 end
 
 def show 
-   @last_created_shoe = Shoe.last
+    last_created_shoe
 end 
 
 
 
 
-private 
+private
+def last_created_shoe
+ @shoe = Shoe.find_by(id: params[:id])
+ if !@shoe
+  redirect_to shoes_path
+ end
+end
+
+
 def shoe_params
     params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality, :brand_id)
  end
-  
-
 end

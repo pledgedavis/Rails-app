@@ -15,7 +15,7 @@
  <br><br>
 
            <%= f.label :brand_id, "Select a Brand"%>
-            <%= f.collection_select :brand_id, Brand.all, :id, :company_name%>  
+            <%= f.collection_select :brand_id, Brand.all, :id, :company_name %>  
             <br><br>
          <%=f.submit "submit" %>
 <% end %> 
