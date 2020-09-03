@@ -13,6 +13,7 @@ class ShoesController < ApplicationController
 
 
   def create 
+    # byebug
     @shoe = current_user.shoes.build(shoe_params)
     if @shoe.save 
         redirect_to shoe_path(@shoe)
@@ -30,7 +31,7 @@ end
 
 private 
 def shoe_params
-    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality)
+    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality, :brand_id)
  end
   
 
