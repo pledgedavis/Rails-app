@@ -2,7 +2,8 @@
 <h1>Create a Shoe below </h1>
 
 <%= form_for(@shoe) do |f| %>
-   
+   <%=render partial: 'layouts/errors', locals: { object: @shoe }%>
+
        <%= f.label :name  %>  <%= f.text_field :name  %>
        <br><br>
          <%= f.label :resale_price %>  <%= f.number_field  :resale_price, min:0%>
