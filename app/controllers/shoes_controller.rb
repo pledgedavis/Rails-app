@@ -1,7 +1,8 @@
 class ShoesController < ApplicationController
 
   def index     
-        
+    # byebug
+        @shoes = Shoe.all
     #     byebug
     #    @user = current_user
   end
