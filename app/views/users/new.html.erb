@@ -1,10 +1,17 @@
-<h1>Sign up here</h1>
+<h1>Sign up Below</h1>
 
 <%= form_for(@user) do |u| %>
+  <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
        <%= u.label :user_name %>  <%= u.text_field :username %>
-        <%= u.label :password %>  <%= u.password_field :password %>
            <%= u.label :email %>  <%= u.email_field :email %>
+           <%= u.label :password %>  <%= u.password_field :password %>
 
          <%=u.submit "submit" %>
 
          <%end%>
+
+

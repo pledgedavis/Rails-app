@@ -2,14 +2,23 @@ class ShoesController < ApplicationController
 
   def index     
     # byebug
+    if params[:brand_id] && brand = Brand.find_by_id(params[:brand_id]) 
+       @shoes = brands.shoes 
+    else
         @shoes = Shoe.all
     #     byebug
     #    @user = current_user
-  end
+     end  
+    end
 
 
   def new 
-   @shoe = Shoe.new
+#    @shoe = Shoe.new   
+  if params[:brand_id] && brand = Brand.find_by_id(params[:brand_id])
+        @shoe = brand.shoes.build
+    else 
+        @shoe = Shoe.new 
+    end
   end 
 
 
