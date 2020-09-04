@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     # render :login
     # byebug
     @user = User.new
-    # render :new
+    render :login
   end 
 
   def home 
@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to shoes_path
      else 
+      flash[:error] = "Sorry, Your username or password was incorrect please try again!"
       redirect_to 'login'
      end
   end 
