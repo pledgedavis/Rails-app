@@ -18,6 +18,7 @@ class ShoesController < ApplicationController
         @shoe = brand.shoes.build
     else 
         @shoe = Shoe.new 
+        @shoe.build_brand
     end
   end 
 
