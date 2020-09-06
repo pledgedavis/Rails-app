@@ -18,7 +18,19 @@
            <%= f.label :brand_id, "Select a Brand"%>
             <%= f.collection_select :brand_id, Brand.all, :id, :company_name %>  
             <br><br>
-         <%=f.submit "submit" %>
+
+            
+
+<br><br>
+   <label>Create a shoe brand</label>
+    <%= f.fields_for :brands do |b| %>
+  <br> <br>
+       <%= b.label :Brand_Company_name  %>  
+       <%= b.text_field :company_name  %> 
+       <br><br>
+   <%end%>
+ <br><br>
+<%=f.submit "submit" %>
 <% end %> 
 
 
