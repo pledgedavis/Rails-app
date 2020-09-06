@@ -47,6 +47,6 @@ end
 
 
 def shoe_params
-    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality, :brand_id)
+    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality, :brand_id, brand_attr: [:company_name])
  end
 end
