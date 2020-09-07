@@ -1,0 +1,16 @@
+<h1>Welcome to <%=@user.username%>'s homepage!</h1>
+
+
+
+
+
+<% if !@user.shoes.present?  %>
+  <strong> Sorry, you don't have any shoes yet!</strong>
+   <%else%>
+
+   <%= @user.shoes.name %>
+    
+  <%end%>
+ 
+
+    <br><br><br>

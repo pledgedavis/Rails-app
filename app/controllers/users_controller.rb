@@ -6,6 +6,10 @@ class UsersController < ApplicationController
     @user = User.new 
  end
 
+ def index
+   @user = User.find_by_id(session[:user_id])
+   # redirect_to user_path(@user.id)
+  end
 
  def create 
     #creates a new user if the user saves the session user id will be set to equal the users id and then redirect to the shoe page
