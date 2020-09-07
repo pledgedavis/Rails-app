@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # omniuath callback 
   # get '/auth/facebook/callback' => 'sessions#create'
   get '/auth/:provider/callback' => 'sessions#fbcreate'
+  get '/search' => 'shoes#shoebybrand'
   
    resources :shoes 
    resources :users

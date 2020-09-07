@@ -1,6 +1,12 @@
  <h1> All shoes </h1> 
 
- 
+ <br>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:Shoe, "Search for review by brand here:") %>    
+  <%= select_tag "brand_id", options_from_collection_for_select(Brand.all, "id", "company_name"), include_blank: true %>
+   <%= submit_tag("Search") %>
+<% end %>
+<br><br>
 
  <% @shoes.each do |s|%>
   <br><br>

@@ -37,6 +37,8 @@ def show
     last_created_shoe
 end 
 
+
+
 private
 def last_created_shoe
     #finds shoe by id and redirects to shoes path if that shoe is false
