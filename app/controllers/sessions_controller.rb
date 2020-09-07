@@ -25,10 +25,11 @@ class SessionsController < ApplicationController
 #      end
 #   end 
 #    #logout action 
-#   def destroy 
-#     session.clear
-#     redirect_to '/'
-#   end 
+  def destroy 
+    session.clear
+     flash[:notice] = "User logged out"
+    redirect_to '/'
+  end 
 
 def create 
   @user = User.find_by(username: params[:user][:username])
@@ -36,7 +37,7 @@ if @user && @user.authenticate(params[:user][:password])
           session[:user_id] = @user.id
           redirect_to user_path(@user)
   else
-    flash[:error] = "Incorrect username or password try again! "
+    flash[:error] = "Sorry, Your username or password was incorrect please try again! "
     redirect_to '/login'
 end
 end
@@ -54,11 +55,6 @@ session[:user_id] = @user.id
 redirect_to '/shoes'
 end
 
-def destroy
-session.delete(:user_id)
-flash[:notice] = "User logged out"
-redirect_to '/' 
-end
 
 def auth
 request.env['omniauth.auth']
