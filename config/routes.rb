@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   # omniuath callback 
   # get '/auth/facebook/callback' => 'sessions#create'
-  #  get '/auth/:provider/callback' => 'sessions#fbcreate'
+  get '/auth/:provider/callback' => 'sessions#fbcreate'
+  
    resources :shoes 
    resources :users
 
