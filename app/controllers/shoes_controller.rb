@@ -37,7 +37,9 @@ def show
     last_created_shoe
 end 
 
-
+def shoebybrand
+  @shoe = Shoe.find_by(id: params[:id])
+end
 
 private
 def last_created_shoe
