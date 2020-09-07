@@ -1,4 +1,4 @@
-# require 'pry'
+require 'pry'
 class SessionsController < ApplicationController
 
   def new 
@@ -40,12 +40,14 @@ end
 #omniauth
 def fbcreate 
 @user = User.find_or_create_by(uid: auth['uid']) do |u|
-  u.username = auth['info']['username']
+  # binding.pry
+  u.username = auth['info']['name']
   u.email = auth['info']['email']
   u.password = auth['uid'] 
 end
 
 session[:user_id] = @user.id
+# byebug
 
 redirect_to '/shoes'
 end
