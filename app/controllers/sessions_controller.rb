@@ -25,12 +25,7 @@ class SessionsController < ApplicationController
 #      end
 #   end 
 #    #logout action 
-  def destroy 
-    session.clear
-     flash[:notice] = "User logged out"
-    redirect_to '/'
-  end 
-
+  
 def create 
   @user = User.find_by(username: params[:user][:username])
 if @user && @user.authenticate(params[:user][:password])
@@ -47,13 +42,19 @@ def fbcreate
 @user = User.find_or_create_by(uid: auth['uid']) do |u|
   u.username = auth['info']['username']
   u.email = auth['info']['email']
-  u.password = auth['uid'] #Secure Random Hex
+  u.password = auth['uid'] 
 end
 
 session[:user_id] = @user.id
 
 redirect_to '/shoes'
 end
+
+def destroy 
+  session.clear
+   flash[:notice] = "User logged out"
+  redirect_to '/'
+end 
 
 
 def auth
