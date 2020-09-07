@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save 
         session[:user_id] = @user.id 
-        redirect_to shoes_path
+        redirect_to users_path
     else 
       # if user doesn't save redirect to sign up
         render :new

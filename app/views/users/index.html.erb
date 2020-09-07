@@ -7,9 +7,9 @@
 <% if !@user.shoes.present?  %>
   <strong> Sorry, you don't have any shoes yet!</strong>
    <%else%>
+   
+   <%= @user.shoes.name %>  
 
-   <%= @user.shoes.name %>
-    
   <%end%>
  
 

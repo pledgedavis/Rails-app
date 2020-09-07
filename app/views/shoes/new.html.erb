@@ -15,11 +15,11 @@
 <label>Choose a shoe brand</label>
  <br><br>
 
+
            <%= f.label :brand_id, "Select a Brand"%>
             <%= f.collection_select :brand_id, Brand.all, :id, :company_name, prompt: true %>  
             <br><br>
-
-            
+                        
 
 <br><br>
    <label>Create a shoe brand</label>
