@@ -31,17 +31,11 @@ class SessionsController < ApplicationController
   end 
 
   def fbcreate 
-    @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      u.username = auth['info']['username']
-      u.email = auth['info']['email']
-      u.password = auth['uid'] #Secure Random Hex
-    end
- 
+    @user = User.from_omniauth(auth)
+    @user.save
     session[:user_id] = @user.id
- 
-    redirect_to shoes_path
-  end
-  
+   redirect_to user_path(@user.id)
+    end
  
   def auth
     request.env['omniauth.auth']
