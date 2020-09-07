@@ -6,4 +6,7 @@ class Shoe < ApplicationRecord
       
     accepts_nested_attributes_for :brand
 
+    def brand_attributes(attributes)
+    end
+
 end
