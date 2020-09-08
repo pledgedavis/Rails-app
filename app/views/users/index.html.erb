@@ -2,14 +2,14 @@
 
 
 
-
+<% @user.shoes.each do |s| %>
+     <%=s.brand.company_name%> - <%=s.name%> 
+      <br> <br>
+<%end%>
 
 <% if !@user.shoes.present?  %>
   <strong> Sorry, you don't have any shoes yet!</strong>
-   <%else%>
-   
-   <%= @user.shoes.name %>  
-
+  
   <%end%>
  
 

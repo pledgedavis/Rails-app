@@ -1,0 +1,9 @@
+<head>
+
+  <h1>All <%=@brand.company_name%> shoes</h1>
+
+
+    <% @brand.shoes.each do |s|%>
+   <p><%=s.name%><p>
+    <%end%>
+    

@@ -38,7 +38,10 @@ def show
 end 
 
 def shoebybrand
-  @shoe = Shoe.find_by(id: params[:id])
+
+  @brand= Brand.find_by(id: params[:brand_id])
+
+    # byebug
 end
 
 private
@@ -52,6 +55,6 @@ end
 
 
 def shoe_params
-    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality, :brand_id, brand_attr: [:company_name])
+    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality, :brand_id, brand_attributes: [:company_name])
  end
 end
