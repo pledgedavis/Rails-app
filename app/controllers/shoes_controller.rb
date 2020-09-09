@@ -21,7 +21,6 @@ class ShoesController < ApplicationController
         @shoe.build_brand
     end
   end 
- 
 
 
   def edit
@@ -47,6 +46,13 @@ def shoebybrand
   find_brand
     # byebug
 end
+
+def destroy
+  last_created_shoe
+    @shoe.destroy
+  redirect_to shoes_path
+end
+
 
 private
 def last_created_shoe
