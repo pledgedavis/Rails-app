@@ -2,7 +2,7 @@ class ShoesController < ApplicationController
 
   def index     
     # byebug
-    if params[:brand_id] && brand = Brand.find_by_id(params[:brand_id]) 
+    if params[:brand_id] && brand = find_brand 
        @shoes = brands.shoes 
     else
         @shoes = Shoe.all
@@ -14,7 +14,7 @@ class ShoesController < ApplicationController
 
   def new 
 #    @shoe = Shoe.new   
-  if params[:brand_id] && brand = Brand.find_by_id(params[:brand_id])
+  if params[:brand_id] && brand = find_brand
         @shoe = brand.shoes.build
     else 
         @shoe = Shoe.new 
@@ -38,9 +38,7 @@ def show
 end 
 
 def shoebybrand
-
-  @brand= Brand.find_by(id: params[:brand_id])
-
+  find_brand
     # byebug
 end
 
@@ -51,6 +49,10 @@ def last_created_shoe
  if !@shoe
   redirect_to shoes_path
  end
+end
+
+def find_brand
+  @brand= Brand.find_by(id: params[:brand_id])
 end
 
 
