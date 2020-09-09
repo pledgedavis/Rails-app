@@ -12,54 +12,41 @@ class SessionsController < ApplicationController
     
   end
 
-#   def create 
-#       # byebug
-#       #finds created user by username and then uses authenticate to verify the password
-#       @user = User.find_by(username: params[:user][:username])
-#      if @user && @user.authenticate(params[:user][:password])
-#       session[:user_id] = @user.id
-#       redirect_to user_path(@user)
-#      else 
-#       flash[:error] = "Sorry, Your username or password was incorrect please try again!"
-#       redirect_to 'login'
-#      end
-#   end 
-#    #logout action 
-  
-def create 
-  @user = User.find_by(username: params[:user][:username])
-if @user && @user.authenticate(params[:user][:password])
+ def create 
+   #finds created user by username and then uses authenticate to verify the password
+    @user = User.find_by(username: params[:user][:username])
+   if @user && @user.authenticate(params[:user][:password])
           session[:user_id] = @user.id
           redirect_to user_path(@user)
-  else
+   else
     flash[:error] = "Sorry, Your username or password was incorrect please try again! "
     redirect_to '/login'
-end
-end
+   end
+ end
 
 #omniauth
-def fbcreate 
-@user = User.find_or_create_by(uid: auth['uid']) do |u|
+ def fbcreate 
+  @user = User.find_or_create_by(uid: auth['uid']) do |u|
   # binding.pry
-  u.username = auth['info']['name']
-  u.email = auth['info']['email']
-  u.password = auth['uid'] 
-end
+    u.username = auth['info']['name']
+    u.email = auth['info']['email']
+    u.password = auth['uid'] 
+  end
 
-session[:user_id] = @user.id
+   session[:user_id] = @user.id
 # byebug
 
-redirect_to '/shoes'
-end
+   redirect_to '/shoes'
+ end
 
-def destroy 
+ def destroy 
   session.clear
    flash[:notice] = "User logged out"
   redirect_to '/'
-end 
+ end 
 
 
-def auth
-request.env['omniauth.auth']
-end
+ def auth
+  request.env['omniauth.auth']
+ end
 end
