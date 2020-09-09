@@ -3,8 +3,12 @@ class BrandsController < ApplicationController
  
 
   def index 
+    if params[:shoe_id]
+        @brands = Shoe.find(params[:shoe_id]).brands
+      else
     @brands = Brand.all 
-  end 
+    end 
+  end
 
   def show
     # binding.pry

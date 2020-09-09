@@ -14,6 +14,6 @@ Rails.application.routes.draw do
    resources :users
 
    resources :brands do 
-    resources :shoes, only: [:new, :index]
+    resources :shoes, only: [:new, :index, :show]
    end 
 end

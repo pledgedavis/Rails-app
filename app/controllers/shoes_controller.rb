@@ -1,11 +1,11 @@
 class ShoesController < ApplicationController
-  before_action :logged_in?
+  before_action :check_if_logged_in
   def index     
     # byebug
     if params[:brand_id] && brand = find_brand 
        @shoes = brands.shoes 
     else
-        @shoes = Shoe.all
+        @shoes = Shoe.ordered
     #     byebug
     #    @user = current_user
      end  
@@ -24,12 +24,18 @@ class ShoesController < ApplicationController
 
 
   def edit
+  # binding.pry  
+  if do_not_match == true
+    flash[:error] = "Shoe has to belong to you to be able to edit! "
+    redirect_back(fallback_location: shoe_path)
+  else
     last_created_shoe
+  end    
   end
 
 
   def create 
-    # byebug
+    # binding.pry
     @shoe = current_user.shoes.build(shoe_params)
     if @shoe.save 
         redirect_to shoe_path(@shoe)
@@ -67,7 +73,7 @@ private
 def last_created_shoe
     #finds shoe by id and redirects to shoes path if that shoe is false
  @shoe = Shoe.find_by(id: params[:id])
- if !@shoe
+ if !@shoe 
   redirect_to shoes_path
  end
 end
@@ -76,8 +82,12 @@ def find_brand
   @brand= Brand.find_by(id: params[:brand_id])
 end
 
+def do_not_match
+  # byebug
+  current_user != Shoe.find_by(id: params[:id]).user 
+end
 
 def shoe_params
-    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality, :brand_id, brand_attributes: [:company_name])
+    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality, brand_attributes:[ :id, :company_name])
  end
 end
