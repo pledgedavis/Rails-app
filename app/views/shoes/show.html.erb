@@ -4,3 +4,5 @@
 
 <%=@shoe.brand.company_name%>
 
+<%= link_to "Edit shoe", edit_shoe_path(@shoe) %>
+  <%= link_to "Delete shoe", shoe_path(@shoe), method: :delete  %>
