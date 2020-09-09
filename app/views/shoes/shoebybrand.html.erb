@@ -6,4 +6,9 @@
     <% @brand.shoes.each do |s|%>
    <p><%=s.name%><p>
     <%end%>
+
+    <% if !@brand.shoes.present?  %>
+      <strong> Sorry, you don't have any shoes yet!</strong>
+  
+  <%end%>
     

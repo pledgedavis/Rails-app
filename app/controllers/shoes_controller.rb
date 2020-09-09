@@ -21,6 +21,12 @@ class ShoesController < ApplicationController
         @shoe.build_brand
     end
   end 
+ 
+
+
+  def edit
+    last_created_shoe
+  end
 
 
   def create 

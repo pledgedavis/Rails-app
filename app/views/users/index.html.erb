@@ -5,6 +5,8 @@
 <% @user.shoes.each do |s| %>
      <%=s.brand.company_name%> - <%=s.name%> 
       <br> <br>
+
+      <%= link_to 'Shoe Page', shoe_path(s)%>
 <%end%>
 
 <% if !@user.shoes.present?  %>

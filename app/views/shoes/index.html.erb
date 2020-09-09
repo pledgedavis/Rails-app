@@ -14,4 +14,9 @@
   <%= s.name%> - <%= s.user.username %>
   - <%= link_to 'Shoe Page', shoe_path(s)%>
   <%end%>
+
+  <% if !@shoes.present?  %>
+  <strong> Sorry, you don't have any shoes yet!</strong>
+  
+  <%end%>
   <%= yield %>
