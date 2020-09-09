@@ -1,5 +1,5 @@
 class ShoesController < ApplicationController
-
+  before_action :logged_in?
   def index     
     # byebug
     if params[:brand_id] && brand = find_brand 
