@@ -25,12 +25,8 @@ class ShoesController < ApplicationController
 
   def edit
   # binding.pry  
-  if do_not_match == true
     flash[:error] = "Shoe has to belong to you to be able to edit! "
-    redirect_back(fallback_location: shoe_path)
-  else
-    last_created_shoe
-  end    
+    last_created_shoe    
   end
 
 
@@ -80,11 +76,6 @@ end
 
 def find_brand
   @brand= Brand.find_by(id: params[:brand_id])
-end
-
-def do_not_match
-  # byebug
-  current_user != Shoe.find_by(id: params[:id]).user 
 end
 
 def shoe_params
