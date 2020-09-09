@@ -47,6 +47,15 @@ def shoebybrand
     # byebug
 end
 
+def update
+  last_created_shoe
+  if @shoe.update(shoe_params)
+    redirect_to shoe_path(@shoe)
+  else
+    render :edit
+  end
+end
+
 def destroy
   last_created_shoe
     @shoe.destroy
