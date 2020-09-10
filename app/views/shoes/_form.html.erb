@@ -1,6 +1,6 @@
-<%= form_for(@shoe) do |f| %>
-   <%=render partial: 'layouts/errors', locals: { object: @shoe }%>
 
+<%=form_for [@brand, @shoe] do |f| %>
+   <%=render partial: 'layouts/errors', locals: { object: @shoe }%>
        <%= f.label :name  %>  <%= f.text_field :name  %>
        <br><br>
          <%= f.label :resale_price %>  <%= f.number_field  :resale_price, min:0%>
@@ -8,6 +8,9 @@
           <%= f.label :retail_price  %>  <%= f.number_field :retail_price, min:0 %>
            <br><br>
          <%= f.label :quality %>  <%= f.number_field  :quality, min:0, max:10%>
+ 
+ 
+      
    <br><br>
 
 
@@ -16,14 +19,14 @@
    
     <%= f.fields_for :brand do |b| %>
 
-
+       
 
 <label>Choose a shoe brand</label>
  <br><br>
            <%= b.label :brand_id, "Select a Brand"%>
             <%= b.collection_select :id, Brand.all, :id, :company_name, prompt: true %>  
             <br><br>
-                        
+                       
 
      <strong>Or</strong>                   
   <br> <br>

@@ -2,5 +2,5 @@
 <br><br>
 <%@brand.shoes.each do |s|%>
  <%=s.name%>
- <%= link_to "Shoes Page", brand_shoe_path(s) %> -
-<%end%>
+ <%= link_to "Shoes Page", brand_shoe_path(@brand, s) %> -
+<%end%> 

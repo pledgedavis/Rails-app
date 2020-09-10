@@ -1,5 +1,6 @@
 class ShoesController < ApplicationController
   before_action :check_if_logged_in
+  
   def index     
     # byebug
     if params[:brand_id] && brand = find_brand 
@@ -14,8 +15,11 @@ class ShoesController < ApplicationController
 
   def new 
 #    @shoe = Shoe.new   
-  if params[:brand_id] && brand = find_brand
-        @shoe = brand.shoes.build
+  if params[:brand_id] && @brand = find_brand
+    # binding.pry
+        # @shoe = brand.shoes.build
+        @shoe = Shoe.new 
+                 @shoe.brand = @brand
     else 
         @shoe = Shoe.new 
         @shoe.build_brand
@@ -31,8 +35,10 @@ class ShoesController < ApplicationController
 
 
   def create 
-    # binding.pry
+    binding.pry
+    # while inside of the nested route shoe_params does not have a brand_id but inside of the nested new form you need the brand_id to match the shoe your creating because without it there is no brand 
     @shoe = current_user.shoes.build(shoe_params)
+    @shoe.brand = Brand.find_by_id(params[:brand_id]) if params[:brand_id]
     if @shoe.save 
         redirect_to shoe_path(@shoe)
     else
@@ -80,6 +86,6 @@ def find_brand
 end
 
 def shoe_params
-    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality, brand_attributes:[ :id, :company_name])
+    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality, :brand_id, brand_attributes:[ :id, :company_name])
  end
 end

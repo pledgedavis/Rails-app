@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new' 
   get '/logout' => 'sessions#destroy'
+  get '/home' => 'users#home' 
   # omniuath callback 
   # get '/auth/facebook/callback' => 'sessions#create'
   get '/auth/:provider/callback' => 'sessions#fbcreate'
@@ -14,6 +15,6 @@ Rails.application.routes.draw do
    resources :users
 
    resources :brands do 
-    resources :shoes, only: [:new, :index, :show]
+    resources :shoes, only: [:new, :index, :show, :create]
    end 
 end
