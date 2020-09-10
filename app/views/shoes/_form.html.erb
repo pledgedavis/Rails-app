@@ -9,22 +9,25 @@
            <br><br>
          <%= f.label :quality %>  <%= f.number_field  :quality, min:0, max:10%>
    <br><br>
-<label>Choose a shoe brand</label>
- <br><br>
+
 
      <% if !params[:brand_id] %>
 <br><br>
-   <label>Create a shoe brand</label>
+   
     <%= f.fields_for :brand do |b| %>
 
 
 
-
+<label>Choose a shoe brand</label>
+ <br><br>
            <%= b.label :brand_id, "Select a Brand"%>
             <%= b.collection_select :id, Brand.all, :id, :company_name, prompt: true %>  
             <br><br>
                         
+
+     <strong>Or</strong>                   
   <br> <br>
+  <label>Create a shoe brand</label>
        <%= b.label :Brand_Company_name  %>  
        <%= b.text_field :company_name  %> 
        <br><br>

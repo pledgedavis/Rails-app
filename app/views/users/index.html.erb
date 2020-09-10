@@ -3,10 +3,12 @@
 
 
 <% @user.shoes.each do |s| %>
+ <br> <br>
      <%=s.brand.company_name%> - <%=s.name%> 
       <br> <br>
 
       <%= link_to 'Shoe Page', shoe_path(s)%>
+       <br> <br>
 <%end%>
 
 <% if !@user.shoes.present?  %>
