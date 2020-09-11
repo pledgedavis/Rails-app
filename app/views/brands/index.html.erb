@@ -1,8 +1,8 @@
 <H1>All Brands</H1>
 
 <% @brands.each do |b|%>
-<%= b.company_name %> <%= link_to 'Brand Page', brand_path(b)%>
-<br><br>
+<%= b.company_name %> - <%= link_to 'Brand Page', brand_path(b)%>
+<br><br><br><br>
 <%end%>
 
 <%= render 'layouts/styling' %>

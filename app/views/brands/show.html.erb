@@ -1,7 +1,7 @@
 <H1><%=@brand.company_name%></H1>
 <br><br>
 
-<%= link_to "Create New Shoe", new_brand_shoe_path(@brand)%>
+ <%= link_to "Create New Shoe", new_brand_shoe_path(@brand)%>
 <%@brand.shoes.each do |s|%>
 <br><br><br>
  <%=s.name%>

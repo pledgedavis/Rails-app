@@ -1,6 +1,6 @@
 require 'pry'
 class BrandsController < ApplicationController
- 
+    before_action :check_if_logged_in
 
   def index 
     if params[:shoe_id]

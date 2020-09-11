@@ -1,9 +1,14 @@
 <h1><%=@shoe.name%>'s Page</h1>
 
 <br>
-<%=@shoe.brand.company_name%>
+ <strong>Shoes Brand:<%=@shoe.brand.company_name%><strong>
 <br><br>
-
+<strong>Retail price:<%=@shoe.retail_price%></strong>
+<br><br>
+<strong>Resale Price:<%=@shoe.resale_price%></strong>
+<br><br>
+<strong>Shoe Quality:<%=@shoe.quality%></strong>
+<br><br>
 <%if current_user == @shoe.user%>
 <%= link_to "Edit shoe", edit_shoe_path(@shoe) %> -
   <%= link_to "Delete shoe", shoe_path(@shoe), method: :delete %>
