@@ -9,7 +9,11 @@ class SessionsController < ApplicationController
   end 
 
   def home 
-    
+    if current_user 
+      session.clear 
+      redirect_to '/'
+      # binding.pry
+    end
   end
 
  def create 
