@@ -35,7 +35,7 @@ class ShoesController < ApplicationController
 
 
   def create 
-    binding.pry
+    # binding.pry
     # while inside of the nested route shoe_params does not have a brand_id but inside of the nested new form you need the brand_id to match the shoe your creating because without it there is no brand 
     @shoe = current_user.shoes.build(shoe_params)
     @shoe.brand = Brand.find_by_id(params[:brand_id]) if params[:brand_id]
