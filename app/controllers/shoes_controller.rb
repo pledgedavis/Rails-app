@@ -79,6 +79,6 @@ def find_brand
 end
 
 def shoe_params
-    params.require(:shoe).permit(:name, :retail_price, :resale_price, :quality, :brand_id, brand_attributes:[ :id, :company_name])
+    params.require(:shoe).permit(:name, :retail_price, :resale_price, :size, :brand_id, brand_attributes:[ :id, :company_name])
  end
 end
