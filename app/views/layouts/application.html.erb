@@ -4,20 +4,59 @@
     <title>RailsApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+  <link rel="stylesheet" href="./styling.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
+    
   </head>
 
   <body>
-  
   <% if logged_in? %>
-      <%= link_to "Log Out", logout_path %>
-        <%= link_to "All Shoes", shoes_path %>
-         <%= link_to 'All Brands', brands_path %>
-        <%=link_to "Create A Shoe", new_shoe_path %> 
-        <%=link_to "Home", home_path %> 
+  <ul>
+      <li><%= link_to "Log Out", logout_path %></li>
+         <li><%= link_to "All Shoes", shoes_path %> </li>
+          <li><%= link_to 'All Brands', brands_path %> </li>
+         <li><%=link_to "Create A Shoe", new_shoe_path %>  </li>
+         <li><%=link_to "Home", home_path %>  </li>
+        </ul>
     <%end%>
      <%= yield %>
   </body>
+  <footer class="branding">
+        <small>&copy; 2020 <strong>Pledge Davis</strong></small>
+</footer>
+  <style>
+  footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+}  
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+</style>
 </html>

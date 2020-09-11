@@ -11,7 +11,8 @@
  <% @shoes.each do |s|%>
   <br><br>
   
-  <%= s.name%> - <%= s.user.username %>
+
+   <%= s.user.username %> - <%= s.name%> 
   - <%= link_to 'Shoe Page', shoe_path(s)%>
   <%end%>
 
