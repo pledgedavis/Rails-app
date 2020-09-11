@@ -1,13 +1,15 @@
 
 <%=form_for [@brand, @shoe] do |f| %>
+<br><br>
    <%=render partial: 'layouts/errors', locals: { object: @shoe }%>
+   <br><br>
        <%= f.label :name  %>  <%= f.text_field :name  %>
        <br><br>
          <%= f.label :resale_price %>  <%= f.number_field  :resale_price, min:0%>
           <br><br>
           <%= f.label :retail_price  %>  <%= f.number_field :retail_price, min:0 %>
            <br><br>
-         <%= f.label :size %>  <%= f.number_field  :size, min:0, max:10%>
+         <%= f.label :size %>  <%= f.number_field  :size, min:0, max:20%>
  
  
       
