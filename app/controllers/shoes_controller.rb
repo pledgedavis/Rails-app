@@ -2,21 +2,16 @@ class ShoesController < ApplicationController
   before_action :check_if_logged_in
   
   def index     
-    # byebug
     if params[:brand_id] && brand = find_brand 
        @shoes = brands.shoes 
     else
         @shoes = Shoe.ordered
-    #     byebug
-    #    @user = current_user
      end  
     end
 
 
   def new 
-#    @shoe = Shoe.new   
   if params[:brand_id] && @brand = find_brand
-    # binding.pry
         # @shoe = brand.shoes.build
         @shoe = Shoe.new 
                  @shoe.brand = @brand
@@ -28,7 +23,6 @@ class ShoesController < ApplicationController
 
 
   def edit
-  # binding.pry  
     flash[:error] = "Shoe has to belong to you to be able to edit! "
     last_created_shoe    
   end
@@ -52,7 +46,6 @@ end
 
 def shoebybrand
   find_brand
-    # byebug
 end
 
 def update

@@ -2,8 +2,6 @@ require 'pry'
 class SessionsController < ApplicationController
 
   def new 
-    # render :login
-    # byebug
     @user = User.new
     render :login
   end 
@@ -12,7 +10,6 @@ class SessionsController < ApplicationController
     if current_user 
       session.clear 
       redirect_to '/'
-      # binding.pry
     end
   end
 
@@ -31,15 +28,11 @@ class SessionsController < ApplicationController
 #omniauth
  def fbcreate 
   @user = User.find_or_create_by(uid: auth['uid']) do |u|
-  # binding.pry
     u.username = auth['info']['name']
     u.email = auth['info']['email']
     u.password = auth['uid'] 
   end
-
    session[:user_id] = @user.id
-# byebug
-
    redirect_to '/shoes'
  end
 

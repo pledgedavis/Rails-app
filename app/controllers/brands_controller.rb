@@ -11,7 +11,6 @@ class BrandsController < ApplicationController
   end
 
   def show
-    # binding.pry
     @brand = Brand.find_by(id: params[:id])
     if !@brand
      redirect_to brand_path
