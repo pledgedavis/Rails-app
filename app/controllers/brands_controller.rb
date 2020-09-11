@@ -6,7 +6,7 @@ class BrandsController < ApplicationController
     if params[:shoe_id]
         @brands = Shoe.find(params[:shoe_id]).brands
       else
-    @brands = Brand.all 
+    @brands = Brand.order_by_name
     end 
   end
 

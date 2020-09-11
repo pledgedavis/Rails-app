@@ -4,7 +4,7 @@ class Brand < ApplicationRecord
     # belongs_to :user, optional: true
     validates :company_name, presence: true 
     validates :company_name, uniqueness: true 
-    scope :order_by_name, -> {order(company_name: :desc)}
+    scope :order_by_name, -> {order(company_name: :asc)}
       
 
     # scope :order_by_name, -> {left_joins(:shoes).group(:id).order('avg(name) desc')}
