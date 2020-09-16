@@ -15,9 +15,9 @@ class SessionsController < ApplicationController
   end
 
  def create 
-   #finds created user by username and then uses authenticate to verify the password
+   #finds created user by username and then uses authenticate to verify the password then redirects to my users homepage
     @user = User.find_by(username: params[:user][:username])
-   if @user && @user.authenticate(params[:user][:password])
+   if @user && @user.authenticate(params[:user][:password]) #uses authenticate method givin to us by bcrypt to authenticate users password
           session[:user_id] = @user.id
           redirect_to home_path
    else
@@ -28,6 +28,7 @@ class SessionsController < ApplicationController
 
 #omniauth
  def fbcreate 
+  # binding.pry
   @user = User.find_or_create_by(uid: auth['uid']) do |u|
     u.username = auth['info']['name']
     u.email = auth['info']['email']
