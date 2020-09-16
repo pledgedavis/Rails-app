@@ -11,7 +11,7 @@ class ShoesController < ApplicationController
 
 
   def new 
-    
+    binding.pry
   if params[:brand_id] && @brand = find_brand
         # @shoe = brand.shoes.build
         @shoe = Shoe.new 
@@ -24,7 +24,6 @@ class ShoesController < ApplicationController
 
 
   def edit
-    flash[:error] = "Shoe has to belong to you to be able to edit! "
     last_created_shoe    
   end
 
