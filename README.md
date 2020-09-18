@@ -3,6 +3,7 @@
 
 <h3>Installation</h3>
 <h4>Clone the repository</h4>
+
   *To get started on using my app you will have to clone this repository with githubrepo @**https://github.com/pledgedavis/Rails-app.git** and run "**git clone https://github.com/pledgedavis/Rails-app.git**" in your local environments terminal*
 
  Then you will run *cd Rails-app*
