@@ -12,12 +12,24 @@ To get started on using my app you will have to clone this repository with https
  Then you will run *cd Rails-app*
 
 <h3>Install dependencies</h3>
-*Run **bundle install** and or **bundle update** to update dependencies*
+
+Run 'bundle install' and or 'bundle update' to update dependencies
 
 
 <h3>Initialize the database</h3>
+
 run 'rails db::create' 'rails db:migrate' 'rails db:seed'
 
-<h3>Run server</h3>
+<h3>Development</h3>
+<h4>Run server</h4>
+
 To start server:
  'rails s'
+
+
+
+
+
+<h3>License</h3>
+ 
+[MIT](https://choosealicense.com/licenses/mit/)
