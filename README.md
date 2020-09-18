@@ -1,20 +1,18 @@
-To get started on using my app you will have to clone this repository with https 'https://github.com/pledgedavis/Rails-app.git' and run "git clone" in front of that link in your local environments terminal. Then you will also have to run "bundle update" in your terminal to download all gems and dependencies. 
-
+<h1>README</h1>
 <h1>Rails Shoe App</h1>
 
-<h3>Clone the repository</h3>
-
-
+<h3>Installation</h3>
+<h4>Clone the repository</h4>
   *To get started on using my app you will have to clone this repository with githubrepo @**https://github.com/pledgedavis/Rails-app.git** and run "**git clone https://github.com/pledgedavis/Rails-app.git**" in your local environments terminal*
 
  Then you will run *cd Rails-app*
 
-<h3>Install dependencies</h3>
+<h4>Install dependencies</h4>
 
 Run 'bundle install' and or 'bundle update' to update dependencies
 
 
-<h3>Initialize the database</h3>
+<h4>Initialize the database</h4>
 
 Run 'rails db::create' 'rails db:migrate' 'rails db:seed'
 
