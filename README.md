@@ -2,7 +2,7 @@ To get started on using my app you will have to clone this repository with https
 
 
 
-#Rails Shoe App
+#Rails Shoe App#
   To get started on using my app you will have to clone this repository with git@https://github.com/pledgedavis/Rails-app.git and run "*git clone https://github.com/pledgedavis/Rails-app.git*" in your local environments terminal.
 
   Then you will run *cd Rails-app*
