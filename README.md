@@ -4,7 +4,7 @@
 <h3>Installation</h3>
 <h4>Clone the repository</h4>
 
-  *To get started on using my app you will first have to clone this github repository @**https://github.com/pledgedavis/Rails-app.git** and run "**git clone https://github.com/pledgedavis/Rails-app.git**" in your local environments terminal*
+  *To get started you will first have to clone this github repository @**https://github.com/pledgedavis/Rails-app.git** and run "**git clone https://github.com/pledgedavis/Rails-app.git**" in your local environments terminal*
 
  Then you will run 'cd Rails-app'
 
