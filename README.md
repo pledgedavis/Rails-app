@@ -6,7 +6,7 @@
 
   *To get started on using my app you will first have to clone this github repository @**https://github.com/pledgedavis/Rails-app.git** and run "**git clone https://github.com/pledgedavis/Rails-app.git**" in your local environments terminal*
 
- Then you will run *cd Rails-app*
+ Then you will run 'cd Rails-app'
 
 <h4>Install dependencies</h4>
 
