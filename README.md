@@ -20,7 +20,7 @@ Run 'rails db::create' 'rails db:migrate' 'rails db:seed'
 <h3>Development</h3>
 <h4>Run local server</h4>
 
-To start server:
+To start server run
  'rails s'
 
 <h4>Navigate to project homepage </h4>
