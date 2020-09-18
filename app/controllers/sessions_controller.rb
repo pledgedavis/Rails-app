@@ -13,7 +13,6 @@ class SessionsController < ApplicationController
       redirect_to '/'
     end
   end
-
  def create 
    #finds created user by username and then uses authenticate to verify the password then redirects to my users homepage
     @user = User.find_by(username: params[:user][:username])

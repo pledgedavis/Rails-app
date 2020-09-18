@@ -11,17 +11,9 @@ class ShoesController < ApplicationController
 
 
   def new 
-    binding.pry
-  if params[:brand_id] && @brand = find_brand
-        # @shoe = brand.shoes.build
-        @shoe = Shoe.new 
-                 @shoe.brand = @brand
-    else 
-        @shoe = Shoe.new 
-        @shoe.build_brand
-    end
+    find_brand if params[:brand_id]
+    @shoe = Shoe.new 
   end 
-
 
   def edit
     last_created_shoe    
@@ -29,16 +21,10 @@ class ShoesController < ApplicationController
 
 
   def create 
-    # binding.pry
-    # while inside of the nested route shoe_params does not have a brand_id 
     @shoe = current_user.shoes.build(shoe_params)
-     # but inside of the nested new form you need the brand_id to match the shoe your creating because without it there is no brand 
-    @shoe.brand = Brand.find_by_id(params[:brand_id]) if params[:brand_id]
-   #If shoe is not save through unnested route searches for brand_id to allow route to be nested
     if @shoe.save 
         redirect_to shoe_path(@shoe)
-        #saves created nested or unnested shoe then redirects to it's show page
-    else
+    else 
         render :new 
   end 
 end
@@ -49,6 +35,8 @@ end
 
 def shoebybrand
   find_brand
+   @shoes = @brand.shoes
+  render :index
 end
 
 def update
