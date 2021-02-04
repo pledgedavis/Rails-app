@@ -27,6 +27,10 @@ To start server run
 Make sure when running rails s that the url in the browser is "http://localhost:3000/" to navigate to the welcome page and then feel free to login or sign up to an existing user with or without Facebook.
 
 
+<h3>Contributing</h3>
+
+Bug reports and pull requests are welcome on GitHub  @**https://github.com/pledgedavis/Rails-app.git** . This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct].
+
 <h3>License</h3>
  
 [MIT](https://choosealicense.com/licenses/mit/)
