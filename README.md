@@ -33,4 +33,4 @@ Bug reports and pull requests are welcome on GitHub  @**https://github.com/pledg
 
 <h3>License</h3>
  
-[MIT](https://choosealicense.com/licenses/mit/)
+The gem is available as open source under the terms of the [MIT License](https://choosealicense.com/licenses/mit/)
