@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-
-
     #loads the signup page
  def new 
     @user = User.new 
@@ -14,7 +12,6 @@ class UsersController < ApplicationController
 
  def create 
     #creates a new user if the user saves the session user id will be set to equal the users id and then redirect to the shoe page
-   #  binding.pry
     @user = User.new(user_params)
     if @user.save 
         session[:user_id] = @user.id 

@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   get '/home' => 'users#home' 
   # omniuath callback 
-  # get '/auth/facebook/callback' => 'sessions#create'
   get '/auth/:provider/callback' => 'sessions#fbcreate'
   get '/search' => 'shoes#shoebybrand'
   

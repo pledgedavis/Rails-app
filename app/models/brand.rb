@@ -6,6 +6,5 @@ class Brand < ApplicationRecord
     validates :company_name, uniqueness: true 
     scope :order_by_name, -> {order(company_name: :asc)}
       
-
     # scope :order_by_name, -> {left_joins(:shoes).group(:id).order('avg(name) desc')}
 end

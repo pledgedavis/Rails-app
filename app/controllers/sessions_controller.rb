@@ -1,6 +1,6 @@
 require 'pry'
 class SessionsController < ApplicationController
-
+  
   def new 
     # binding.pry
     @user = User.new
