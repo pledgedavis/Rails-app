@@ -60,6 +60,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # omniauth 
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
 gem 'thin'
 gem 'dotenv-rails'
 gem 'bootstrap-sass', '~> 3.4.1'
